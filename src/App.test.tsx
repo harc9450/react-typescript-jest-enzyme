@@ -14,8 +14,14 @@ describe("App", () => {
   test('it renders', () => {
     expect(wrapper.html()).toContain('<div class="App">');
   });
-  
+
   test('don\'t have any property', () => {
     expect(component.instance().props).toEqual({});
   });
+
+  /** added method in the branch - origin/users/enzyme */
+  test('headers should have the class name App-header', () => {
+    expect(component).toMatchSnapshot('<header className="App-header">');
+  });
+
 })
