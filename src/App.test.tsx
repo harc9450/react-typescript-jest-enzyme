@@ -23,10 +23,5 @@ describe("App", () => {
   test('headers should have the class name App-header', () => {
     expect(component).toMatchSnapshot('<header className="App-header">');
   });
-
-  /** added method in the branch - origin/users/react */
-  test('paragraph should have the class name App-intro', () => {
-    expect(component).toMatchSnapshot('<p className="App-intro">');
-  });
   
 })
