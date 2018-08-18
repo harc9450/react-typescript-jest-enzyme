@@ -1,9 +1,28 @@
 {
-  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "extends": [
+    "tslint:recommended",
+    "tslint-react",
+    "tslint-config-prettier"
+  ],
   "linterOptions": {
     "exclude": [
       "config/**/*.js",
       "node_modules/**/*.ts"
-    ]
+    ],
+    "rules": {
+    "no-any": true,
+    "no-inferrable-types": false,
+    "typedef": [
+      true
+    ],
+    "max-line-length": [
+      true
+    ],
+    "jsx-alignment": false,
+    "jsx-ban-props": false,
+    "jsx-no-string-ref": false,
+    "jsx-no-bind": false,
+    "prefer-const": true
+  }
   }
 }
