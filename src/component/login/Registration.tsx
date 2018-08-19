@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { actionTypes } from "../../shared/store/actionTypes";
 import { IRegistrationProps } from "../../shared/store/props/registrationProps";
 
-function mapStateToProps(state: any) {
+function mapStateToProps(state: any): IRegistrationProps {
 
     return state.registration;
 }
@@ -26,28 +26,27 @@ class RegistrationComponent extends React.Component<IRegistrationProps, {}> {
     }
 
     public render() {
-        const { name, email, mobile, address } = this.props;
 
         return (
             <div>
                 <TextField
-                    value={name}
+                    value={this.props.name}
                     name="name"
                     label="Name"
                 />
 
                 <TextField
-                    value={mobile}
+                    value={this.props.mobile}
                     name="mobile"
                     label="Mobile"
                 />
                 <TextField
-                    value={email}
+                    value={this.props.email}
                     name="email"
                     label="Email"
                 />
                 <TextField
-                    value={address}
+                    value={this.props.address}
                     name="address"
                     label="Address"
                 />

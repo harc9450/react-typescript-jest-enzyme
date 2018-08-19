@@ -1,8 +1,12 @@
 import { PrimaryButton } from "office-ui-fabric-react/lib/Button";
+import { MessageBarType } from "office-ui-fabric-react/lib/MessageBar";
 import { TextField } from "office-ui-fabric-react/lib/TextField";
 import * as React from 'react';
 import { connect } from "react-redux";
 import { actionTypes } from "../../shared/store/actionTypes";
+import CommandBarPage from "./../CommandBar/CommandBarPage";
+import MessageBarPage from "./../CommandBar/MessageBarPage";
+import SpinnerPage from "./../SpinnerPage";
 import Registration from "./Registration";
 
 export interface ILoginProps {
@@ -33,14 +37,22 @@ class LoginComponent extends React.Component<ILoginProps, {}> {
     }
 
     public render() {
+        const messageProps = {
+            fadeTimeout: 10000,
+            message: "Success Message !",
+            messageBarProps: {
+                messageBarType: MessageBarType.success
+            },
+            onDismissMessagebar: Function,
+            showMessageBar: false
+        }
+
         return (
             <div>
-                <Registration
-                    name=""
-                    email=""
-                    mobile=""
-                    address=""
-                />
+                <CommandBarPage />
+                <MessageBarPage {...messageProps} />
+                <SpinnerPage />
+                <Registration />
 
                 <TextField
                     value={this.props.username}
